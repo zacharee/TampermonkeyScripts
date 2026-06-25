@@ -22,7 +22,7 @@ const cfg = merge(webpackConfig, {
   },
   entry: {
     debug: webpackConfig.entry,
-    "dev.user": path.resolve(__dirname, "./empty.cjs"),
+    "dev.user": path.resolve(__dirname, "../../config/empty.cjs"),
   },
   output: {
     filename: "index.[name].js",

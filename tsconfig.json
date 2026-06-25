@@ -3,9 +3,10 @@
     "outDir": "./dist/",
     "esModuleInterop": true,
     "noImplicitAny": true,
-    "moduleResolution": "Node",
-    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "module": "esnext",
     "target": "ES2020",
-    "allowJs": true
+    "allowJs": true,
+    "rootDir": "./",
   }
 }
