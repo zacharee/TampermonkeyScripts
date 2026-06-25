@@ -1,0 +1,49 @@
+const path = require("path");
+const { merge } = require("webpack-merge");
+const LiveReloadPlugin = require("webpack-livereload-plugin");
+const {
+  UserScriptMetaDataPlugin,
+} = require("userscript-metadata-webpack-plugin");
+
+const baseMetadata = require("./metadata.cjs");
+const webpackConfig = require("./webpack.config.base.cjs");
+
+const metadata = structuredClone(baseMetadata);
+
+module.exports = function(env) {
+  const packagePath = env.PACKAGE;
+  const packageDir = path.parse(packagePath).dir
+
+  metadata.require.push(
+    "file://" + path.resolve(packageDir, "dist/index.debug.js")
+  );
+
+  return merge(webpackConfig, {
+    mode: "development",
+    cache: {
+      type: "filesystem",
+      name: "dev",
+    },
+    entry: {
+      debug: webpackConfig.entry,
+      "dev.user": path.resolve('./empty.cjs'),
+    },
+    output: {
+      filename: "index.[name].js",
+      path: path.resolve(packageDir, "dist"),
+    },
+    devtool: "eval-source-map",
+    watch: true,
+    watchOptions: {
+      ignored: /node_modules/,
+    },
+    plugins: [
+      new LiveReloadPlugin({
+        delay: 500,
+      }),
+      new UserScriptMetaDataPlugin({
+        metadata,
+      }),
+    ],
+  });
+}

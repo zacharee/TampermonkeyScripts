@@ -1,0 +1,7 @@
+saveExact: true
+linkWorkspacePackages: true
+preferWorkspacePackages: true
+
+packages:
+  - 'patreon-taller-video'
+  - 'vimeo-video-fit'
