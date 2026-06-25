@@ -1,5 +1,3 @@
-import 'arrive';
-
 const css = `
 div.js-player_area-wrapper,
 div.player_area.js-player_area.js-player-fullscreen,
