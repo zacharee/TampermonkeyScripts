@@ -7,7 +7,7 @@ const {
   version,
 } = require("../package.json");
 
-const updateURL = new URL(`main/dist/${name}.user.js`, repository.url);
+const updateURL = new URL(`master/${name}/dist/${name}.user.js`, repository.url);
 updateURL.host = "raw.githubusercontent.com";
 
 module.exports = {

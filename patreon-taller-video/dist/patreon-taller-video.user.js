@@ -5,8 +5,8 @@
 // @version       0.0.1
 // @author        Zachary Wander <zachary@zwander.dev>
 // @source        https://github.com/zacharee/TampermonkeyScripts/
-// @updateURL     https://raw.githubusercontent.com/zacharee/TampermonkeyScripts/main/dist/patreon-taller-video.user.js
-// @downloadURL   https://raw.githubusercontent.com/zacharee/TampermonkeyScripts/main/dist/patreon-taller-video.user.js
+// @updateURL     https://raw.githubusercontent.com/zacharee/TampermonkeyScripts/master/patreon-taller-video/dist/patreon-taller-video.user.js
+// @downloadURL   https://raw.githubusercontent.com/zacharee/TampermonkeyScripts/master/patreon-taller-video/dist/patreon-taller-video.user.js
 // @match         https://*.patreon.com/*
 // @run-at        document-end
 // ==/UserScript==
